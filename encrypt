@@ -1,0 +1,9 @@
+#!/bin/sh
+
+name=$1
+gz=${name}.tar.gz
+des3=${gz}.des3
+[ -d "${name}" ] && {
+     tar -czf ${gz} ${name}
+     openssl des3 -salt -in ${gz} -out ${des3}
+}
