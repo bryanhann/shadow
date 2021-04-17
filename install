@@ -11,8 +11,11 @@ done
 
 ssh-add
 
-src=git@github.com:bryanhann/kitchen
-dst=${HOME}/kitchen
+export ARF_HOME=${HOME}/.arf
+mkdir -p ${ARF_HOME}
+
+src=git@github.com:bryanhann/arf
+dst=${ARF_HOME}/arf
 
 git clone ${src} ${dst}
 
