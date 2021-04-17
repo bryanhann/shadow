@@ -1,9 +1,25 @@
 #!/bin/sh
+
 [ "$0" = "./install.cred" ] || echo "try './install.cred'"
 [ "$0" = "./install.cred" ] || exit 99
 
 
 ./decrypt
+
 for ii in $(ls -A ./credentials); do
     cp -r ./credentials/$ii ~
 done
+
+ssh-add
+
+export MYCLEAR=${HOME}/__clear__
+
+rm -rf ${MYCLEAR}
+mkdir -p ${MYCLEAR}
+git clone git@github.com:bryanhann/clear ${MYCLEAR}/clear.repo
+cd ${MYCLEAR}
+
+echo ENTERING SHELL
+bash --norc
+echo LEAVING SHELL
+
