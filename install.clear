@@ -5,13 +5,9 @@ export MYCLEAR=${HOME}/__clear__
 rm -rf ${MYCLEAR}
 mkdir -p ${MYCLEAR}
 git clone git@github.com:bryanhann/shadow ${MYCLEAR}/shadow.clear
+cd ${MYCLEAR}
 
-#rm -rf ~/MB.new
-#git clone git@github.com:bryanhann/clear
-
-#cd ~/clear
-
-#echo ENTERING SHELL
-#bash --norc
-#echo LEAVING SHELL
+echo ENTERING SHELL
+bash --norc
+echo LEAVING SHELL
 
