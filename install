@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ "$0" = "./install ] || echo "try './install'"
+[ "$0" = "./install" ] || echo "try './install'"
 [ "$0" = "./install" ] || exit 99
 
 ./decrypt
