@@ -1,9 +1,18 @@
 #!/bin/sh
 
-name=$1
-gz=${name}.tar.gz
-des3=${gz}.des3
-[ -d "${name}" ] && {
-     tar -czf ${gz} ${name}
-     openssl des3 -salt -in ${gz} -out ${des3}
+include () {
+    cp -rf $1 ${clear}
 }
+
+main () {
+    rm -rf ${clear}
+    mkdir -p ${clear}
+    include ~/.ssh
+    include ~/.aws
+    include ~/.hub
+    zip -e -r credentials ${clear}
+    rm -rf ${clear}
+}
+
+clear=./credentials
+main
