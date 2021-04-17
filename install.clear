@@ -4,7 +4,8 @@ export MYCLEAR=${HOME}/__clear__
 
 rm -rf ${MYCLEAR}
 mkdir -p ${MYCLEAR}
-git clone git@github.com:bryanhann/shadow ${MYCLEAR}/shadow.clear
+#git clone git@github.com:bryanhann/shadow ${MYCLEAR}/shadow.repo
+git clone git@github.com:bryanhann/shadow ${MYCLEAR}/clear.repo
 cd ${MYCLEAR}
 
 echo ENTERING SHELL
