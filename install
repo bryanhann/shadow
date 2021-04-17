@@ -11,8 +11,9 @@ done
 
 ssh-add
 
+mkdir -r ${HOME}/git
 src=git@github.com:bryanhann/kitchen
-dst=${HOME}/kitchen
+dst=${HOME}/git/kitchen
 
 git clone ${src} ${dst}
 
