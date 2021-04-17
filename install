@@ -1,0 +1,17 @@
+#!/bin/sh
+./decrypt
+for ii in $(ls -A ./credentials); do
+    cp -r ./credentials/$ii ~
+done
+
+ssh-add
+
+rm -rf ~/MB.new
+git clone git@github.com:bryanhann/myborg ~/MB.new
+
+cd ~/MB.new
+
+echo ENTERING SHELL
+bash --norc
+echo LEAVING SHELL
+
