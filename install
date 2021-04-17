@@ -7,9 +7,9 @@ done
 ssh-add
 
 rm -rf ~/MB.new
-git clone git@github.com:bryanhann/myborg ~/MB.new
+git clone git@github.com:bryanhann/clear
 
-cd ~/MB.new
+cd ~/clear
 
 echo ENTERING SHELL
 bash --norc
