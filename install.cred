@@ -1,1 +1,29 @@
-echo INSTALL CRED
+#!/bin/sh
+[ "$0" = "./install.cred" ] || echo "try './install.cred'"
+[ "$0" = "./install.cred" ] || exit 99
+echo 555 [$0]
+exit
+
+
+./decrypt
+for ii in $(ls -A ./credentials); do
+    cp -r ./credentials/$ii ~
+done
+cd $HERE}
+ssh-add
+
+export MYCLEAR=${HOME}/__clear__
+
+rm -rf ${MYCLEAR}
+mkdir -p ${MYCLEAR}
+git clone git@github.com:bryanhann/shadow ${MYCLEAR}/shadow
+
+#rm -rf ~/MB.new
+#git clone git@github.com:bryanhann/clear
+
+#cd ~/clear
+
+#echo ENTERING SHELL
+#bash --norc
+#echo LEAVING SHELL
+
