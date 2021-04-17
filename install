@@ -1,0 +1,18 @@
+#!/bin/sh
+
+[ "$0" = "./install ] || echo "try './install'"
+[ "$0" = "./install" ] || exit 99
+
+./decrypt
+
+for ii in $(ls -A ./credentials); do
+    cp -r ./credentials/$ii ~
+done
+
+ssh-add
+
+src=git@github.com:bryanhann/kitchen
+dst=${HOME}/kitchen
+
+git clone ${src} ${dst}
+
