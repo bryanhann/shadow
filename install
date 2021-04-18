@@ -15,3 +15,5 @@ mkdir -p ${ARF_HOME}
 src=git@github.com:bryanhann/arf
 dst=${ARF_HOME}/arf
 git clone ${src} ${dst}
+cd ${dst}
+./install
