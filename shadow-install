@@ -1,14 +1,16 @@
 #!/bin/sh
 
-[ "$0" = "./install" ] || echo "try './install'"
-[ "$0" = "./install" ] || exit 99
+[ "$0" = "./shadow-install" ] || echo "try './shadow-install'"
+[ "$0" = "./shadow-install" ] || exit 99
+
+echo ++ [$0] [$*]
 
 ./decrypt
 
 for ii in $(ls -A ./credentials); do
     cp -r ./credentials/$ii ~
 done
-
+echo
 ssh-add
 export ARF_HOME=${HOME}/.arf
 mkdir -p ${ARF_HOME}
@@ -17,4 +19,8 @@ dst=${ARF_HOME}/arf
 rm -rf ${dst}
 git clone ${src} ${dst}
 cd ${dst}
-./install
+echo -- [$0] [$1]
+
+./install $*
+
+echo END $0
