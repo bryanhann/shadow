@@ -10,17 +10,23 @@ echo ++ [$0] [$*]
 for ii in $(ls -A ./credentials); do
     cp -r ./credentials/$ii ~
 done
-echo
-ssh-add
-export ARF_HOME=${HOME}/.arf
-mkdir -p ${ARF_HOME}
-src=git@github.com:bryanhann/arf
-dst=${ARF_HOME}/arf
-rm -rf ${dst}
-git clone ${src} ${dst}
-cd ${dst}
-echo -- [$0] [$1]
 
-./install $*
+ssh-add
+
+./myborg-install
+
+
+
+#echo
+#export ARF_HOME=${HOME}/.arf
+#mkdir -p ${ARF_HOME}
+#src=git@github.com:bryanhann/arf
+#dst=${ARF_HOME}/arf
+#rm -rf ${dst}
+#git clone ${src} ${dst}
+#cd ${dst}
+#echo -- [$0] [$1]
+
+##./install $*
 
 echo END $0

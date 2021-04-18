@@ -1,0 +1,13 @@
+#!/bin/bash
+
+src=git@github.com:bryanhann/myborg
+dst=~/MB
+rm -rf ${dst}
+git clone ${src} ${dst}
+cd ${dst}
+./install
+echo DONE
+rm -rf ~/.config/borguser
+mkdir -p ~/.config/borguser/dots
+echo 'popo-zap-rssh &' > ~/.config/borguser/dots/dot.bashrc
+echo END $0
